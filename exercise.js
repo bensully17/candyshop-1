@@ -24,14 +24,14 @@ function candySalesToObject(array) {
 function salesDayToObject(date, daysSales){
     let allSales = daysSales[date]
     let newObject = allSales.reduce((acc, salesArray) => {
-    acc.date = date
-    acc.sales.push(candySalesToObject(salesArray))
-    return acc
-   }, {sales: []})
-   return newObject
+        acc.date = date
+        acc.sales.push(candySalesToObject(salesArray))
+        return acc
+    }, {sales: []})
+    return newObject
 }
 
 function allSalesToArray(object) {
-return Object.keys(object).map(date => salesDayToObject(date, object))
+    return Object.keys(object).map(date => salesDayToObject(date, object))
 }
 
